@@ -365,12 +365,12 @@ section:not(:last-child)::after {
 }
 
 .project-title[href="http://127.0.0.1:5501/index.html"] {
-    color: #28a745; 
+    color: #007bff; 
     font-weight: bold;
 }
 
 .project-title[href="http://127.0.0.1:5501/index.html"]:hover {
-    color: #218838; 
+    color: #0056b3; 
 }
 
 .languages-section {
