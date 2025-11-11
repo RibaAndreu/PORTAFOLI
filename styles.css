@@ -11,8 +11,75 @@ body {
     min-height: 100vh;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(20, 36, 36, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.nav-name {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-name:hover {
+    color: #7dabc9;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7dabc9;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #7dabc9;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 body {
-    background: linear-gradient(90deg, rgba(20, 36, 36, 1) 0%, rgba(29, 30, 130, 1) 50%, rgba(125, 171, 201, 1) 100%);
+    background: linear-gradient(90deg, rgba(20, 36, 36, 1) 0%, rgba(29, 30, 130, 1) 50%, rgba(44, 83, 131, 1) 100%);
     background-attachment: fixed;
 }
 
@@ -25,7 +92,7 @@ section {
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 section:not(:last-child)::after {
@@ -50,11 +117,13 @@ section:not(:last-child)::after {
 }
 
 .profile-pic {
-    max-width: 30%; 
+    max-width: 25%;
+    width: 300px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-right: 30px; 
+    margin-right: 30px;
+    object-fit: contain;
 }
 
 .text-container {
@@ -105,7 +174,6 @@ section:not(:last-child)::after {
 
 .footer {
     width: 100%;
-    background: linear-gradient(90deg, rgba(20, 36, 36, 0.95) 0%, rgba(29, 30, 130, 0.95) 50%, rgba(125, 171, 201, 0.95) 100%);
     padding: 40px 0;
     margin-top: auto;
 }
@@ -115,8 +183,6 @@ section:not(:last-child)::after {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 .contact-title {
@@ -136,9 +202,9 @@ section:not(:last-child)::after {
 .contact-item {
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-item:hover {
@@ -342,15 +408,13 @@ section:not(:last-child)::after {
     text-align: center;
     width: 150px; 
     padding: 20px; 
-    background: #2a2a2a;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .language:hover {
-    transform: scale(1.1); 
-    background-color: #333;
+    transform: scale(1.1);
 }
 
 .language-pic {
@@ -365,12 +429,11 @@ section:not(:last-child)::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background: #142424;
+    width: 80%;
+    max-width: 1200px;
     color: #fff;
     padding: 40px 20px;
-    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .video-title {
